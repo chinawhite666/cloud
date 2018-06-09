@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- @author Haroen <hello@haroen.me> -->
+<html lang="en">
+
+<head>
+  <title>Holmes</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <link href='https://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/xcConfirm.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="css/xcConfirm.css"/>
+
+
+ 
+<script type="text/javascript">
+	$(function(){
+		
+	
+    
+    $("#btn6").click(function(){
+					var txt=  "请输入";
+					window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{
+						onOk:function(v){
+							console.log(v);
+						}
+					});
+				});
+
+	});
+</script>
+</head>
+
+<body>
+  <header>
+    <h1>
+      <a href="#">Holmes</a>
+      <img src="images/holmes_logo-hover.svg" alt="Holmes Logo">
+    </h1>
+    <p>Fast and easy searching inside a page.</p>
+  </header>
+  <span class="separator" data-category="Installation"></span>
+ 
+  <pre><code class="microlight">
+holmes({
+  find: '.results blockquote'
+});
+    </code></pre>
+    <pre><code class="microlight hidden" id="full-doc">
+holmes({
+  // queryselector for the input
+  input: '.search input',
+  // queryselector for element to search in
+  find: '.results article',
+  // (optional) text to show when no results
+  placeholder: 'no results',
+  class: {
+    // (optional) class to add to matched elements
+    visible: 'visible',
+    // (optional) class to add to non-matched elements
+    hidden: 'hidden'
+  },
+  // (optional) if true, this will refresh the content every search
+  dynamic: false,
+  // (optional) needs to be true if the input is a contenteditable field instead of a
+  contenteditable: false,
+  // (optional) in case you don't want to wait for DOMContentLoaded before starting Holmes:
+  instant: true
+});
+    </code></pre>
+ 
+  <span class="separator" data-category=""></span>
+  <p><a  id="btn6">@联系我</a></p>
+  <div class="search">
+    <input type="search" placeholder="search here" required>
+    <button class="toggle" data-tooltip="Use of the .visible class">*</button>
+  </div>
+  <div class="results">
+    <blockquote>
+      ‘My name is Sherlock Holmes. It is my business to know what other people don’t know.’
+      <cite>&nbsp;&ndash;&nbsp;The Adventure of the Blue Carbuncle</cite>
+    </blockquote>
+    <blockquote>
+        ‘My name is Sherlock Holmes. It is my business to know what other people don’t know.’
+        <cite>&nbsp;&ndash;&nbsp;The Adventure of the Blue Carbuncle</cite>
+      </blockquote>
+   
+  </div>
+  <span class="separator"></span>
+  
+  <script src="js/holmes.js"></script>
+  <script src="js/microlight.js"></script>
+  <script>
+  // holmes setup
+  holmes({
+    input: '.search input',
+    find: '.results blockquote',
+    placeholder: '<h3>— No results, my dear Watson. —</h3>',
+    class: {
+      visible: 'visible',
+      hidden: 'hidden'
+    }
+  });
+
+  // show all of the options
+  document.getElementById('more').addEventListener('click',function(e){
+    e.preventDefault();
+    document.getElementById('full-doc').classList.toggle('hidden');
+  });
+
+  // toggle for showing hidden elements
+  document.querySelector('.toggle').addEventListener('click', function(e) {
+    e.target.classList.toggle('clicked');
+    document.querySelector('.results').classList.toggle('classes');
+  });
+  </script>
+</body>
+
+</html>

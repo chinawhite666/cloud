@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>Holmes</title>
+  <title>nebulas云盘搜索</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
   <link href='https://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet' type='text/css'>
@@ -61,7 +61,16 @@
         var b = document.createElement("blockquote");
          b.innerHTML=contentstr;
          a.appendChild(b);
-      
+         holmes({
+        input: '.search input',
+        find: '.results blockquote',
+        placeholder: '',
+        class: {
+          visible: 'visible',
+          hidden: 'hidden'
+        }
+          });
+          
 			
 		
 			
@@ -136,9 +145,7 @@
   <span class="separator" data-category="Cloud search"></span>
  
   <pre><code class="microlight">
-holmes({
-  find: '.results blockquote'
-});
+  在本站你可以分享你的网盘资源，也可以寻找你需要的资源。
     </code></pre>
     <pre><code class="microlight hidden" id="full-doc">
 holmes({
@@ -182,15 +189,7 @@ holmes({
   <script src="js/microlight.js"></script>
   <script>
   // holmes setup
-  holmes({
-    input: '.search input',
-    find: '.results blockquote',
-    placeholder: '<h3>— No results, my dear Watson. —</h3>',
-    class: {
-      visible: 'visible',
-      hidden: 'hidden'
-    }
-  });
+ 
 
   // show all of the options
   document.getElementById('more').addEventListener('click',function(e){

@@ -73,9 +73,9 @@
     }
 
     if (options.instant) {
-      start();
+      console.log("5");
     } else {
-      window.addEventListener('DOMContentLoaded', start);
+      start();
     }
 
     // start listening

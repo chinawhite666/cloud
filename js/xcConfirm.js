@@ -82,6 +82,7 @@
 		var $ok = $("<a>").addClass("sgBtn").addClass("ok").text("确定");//确定按钮
 		var $cancel = $("<a>").addClass("sgBtn").addClass("cancel").text("取消");//取消按钮
 		var $input = $("<input>").addClass("inputBox");//输入框
+		$input.val("在这里输入！");
 		var $clsBtn = $("<a>").addClass("clsBtn");//关闭按钮
 		
 		//建立按钮映射关系

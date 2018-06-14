@@ -214,11 +214,11 @@ pre:first-of-type {
 
 .results blockquote {
   
-  -webkit-flex-basis: 8em;
-  -ms-flex-preferred-size: 8em;
+ 
+  
   flex-basis: 8em;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
+  
+  
   flex-grow: 1;
   border: 1px solid black;
   padding: 1em;
@@ -251,8 +251,7 @@ pre:first-of-type {
 
 .results.classes blockquote.visible {
   border-bottom: 5px solid #86BA68;
-  -webkit-order: 1;
-  -ms-flex-order: 1;
+
   order: 1;
 }
 

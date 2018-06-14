@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>nebulas云盘搜索</title>
+  <title>nebulas快搜</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
   <link href='https://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet' type='text/css'>
@@ -12,8 +12,11 @@
 <script src="js/xcConfirm.js" type="text/javascript" charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="css/xcConfirm.css"/>
 <script type="text/javascript" src="./dist/nebulas.js"></script>
-
+<link href="css/spop.min.css" rel="stylesheet"/>
 <script type="text/javascript" src="./dist/nebPay.js"></script>
+<script  src="js/alert.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./css/mobie.css" media="only screen and (max-device-width:480px)">	
 
 
  
@@ -40,7 +43,19 @@
             "args": callArgs
         }
     function get(){
+      showLoading({
+            title:"正在拼命加载资源",
+            mask:true,
+            success:function (res) {
+                console.warn(JSON.stringify(res))
+            }
+        });
+        setTimeout(function(){
+            hideLoading()
+        },2000);
+        spop('1已经适配手机端—18.6.14<br>2本站仅提供资源链接搜索服务，不存放任何实质内容。');
 		console.log("111");
+   
 		var callFunction = "getJoker";
         
 		for(var i=0;i<20;i++){
@@ -85,6 +100,7 @@
 
 
 	}
+  
 	window.onload =get;
 
 
@@ -137,7 +153,7 @@
 <body>
   <header>
     <h1>
-      <a href="#">canon</a>
+      <a href="#">nebulas</a>
       <img src="images/holmes_logo-hover.svg" alt="Holmes Logo">
     </h1>
     <p>Fast and easy searching inside a page.</p>
@@ -145,7 +161,7 @@
   <span class="separator" data-category="Cloud search"></span>
  
   <pre><code class="microlight">
-  在本站你可以分享你的网盘资源，也可以寻找你需要的资源。本站内置搜索功能
+  星云快搜，简单，快速地搜索你想要的资源
     </code></pre>
     <pre><code class="microlight hidden" id="full-doc">
 holmes({
@@ -174,7 +190,7 @@ holmes({
   <p><a  id="btn6">@上传</a></p>
   <div class="search">
     <input type="search" placeholder="search here" required>
-    <button class="toggle" data-tooltip="Use of the .visible class">*</button>
+    
   </div>
   <div class="results" id="list">
    
@@ -186,7 +202,6 @@ holmes({
         </blockquote>
      <blockquote>
        美剧《硅谷》s1-s5（s5是关于区块链哦，可以当科普看看）@https://pan.baidu.com/wap/init?surl=5sBQDe8C2x44pN7J3fR82g@密码23m5
-
      </blockquote>   
      <blockquote>
         www.taobao.com
@@ -198,6 +213,9 @@ holmes({
   
   <script src="js/holmes.js"></script>
   <script src="js/microlight.js"></script>
+ 
+  <script src="js/spop.min.js"></script>
+ 
   <script>
   // holmes setup
  

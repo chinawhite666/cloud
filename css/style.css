@@ -213,6 +213,7 @@ pre:first-of-type {
  */
 
 .results blockquote {
+  
   -webkit-flex-basis: 8em;
   -ms-flex-preferred-size: 8em;
   flex-basis: 8em;

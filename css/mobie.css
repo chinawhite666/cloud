@@ -1,6 +1,6 @@
 blockquote{
 
 
-    width: 250px;
-    word-wrap: break-word;
+    width: 250px !important;
+    word-wrap: break-word !important;
 }
